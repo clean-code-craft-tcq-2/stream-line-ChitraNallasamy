@@ -1,7 +1,7 @@
 #define CATCH_CONFIG_MAIN 
 
 #include "test/catch.hpp"
-#include "receiver/processingSenderData.h"
+#include "processingSenderData.h"
 
 TEST_CASE("Receive the data stream from sender and validate parsed value of each parameters") 
 {
