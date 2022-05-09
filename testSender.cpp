@@ -1,6 +1,6 @@
 #define CATCH_CONFIG_MAIN  
 #include "test/catch.hpp"
-#include "SensorDataAcquisition.h"
+#include "sensorDataAcquisition.h"
 #include <string.h>
 #include <stdio.h>
 
