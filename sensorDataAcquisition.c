@@ -1,4 +1,4 @@
-#include "sensorDataAquisition.h"
+#include "sensorDataAcquisition.h"
 
 void convertSensorDataToJson (BMS sensor_data, char *jsonData)
 {
