@@ -9,7 +9,7 @@ SCENARIO("Validate JSON Data format")
     GIVEN("sensor data of battery temperature and charging current")
     {
 		char actualData[64];
-		char *expectedData = (char*)"{\"Temperature\": 23.7, \"ChargingCurrent\": 5.6}";
+		char *expectedData = (char*)"{\"Temperature\": 14.6, \"ChargingCurrent\": 4.9}";
 		BMS sensor_data;
 		sensor_data.temperature = 14.6;
 		sensor_data.chargingCurrent = 4.9;
@@ -31,9 +31,9 @@ SCENARIO("Validate data stream in newline")
     GIVEN("sensor data in json format")
     {
 		FILE *endPoint = fopen("./output.txt", "w");
-		char *sensorData = (char*)"{\"Temperature\": 23.7, \"ChargingCurrent\": 5.6}";
+		char *sensorData = (char*)"{\"Temperature\": 14.6, \"ChargingCurrent\": 4.9}";
 		char outputBuf[64];
-		char *expectedData = (char*)"{\"Temperature\": 23.7, \"ChargingCurrent\": 5.6}\n";
+		char *expectedData = (char*)"{\"Temperature\": 14.6, \"ChargingCurrent\": 4.9}\n";
         WHEN("streamData() is called with given sensor data")
         {
             streamData (sensorData, endPoint);
