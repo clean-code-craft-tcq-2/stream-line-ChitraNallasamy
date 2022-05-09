@@ -1,4 +1,4 @@
-#include "dataAquisition.h"
+#include "sensorDataAquisition.h"
 #define SENSOR_DATA_SIZE	50
 
 float batteryTemperature [SENSOR_DATA_SIZE] = {16.0,22.0,6.0,24.0,28.0,19.0,43.0,36.0,50.0,30.0,
