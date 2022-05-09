@@ -14,7 +14,7 @@ float batteryChargingCurrent [SENSOR_DATA_SIZE] = {2.6,1.6,3.6,4.6,5.6,6.6,7.6,8
                                                    1.9,2.9,3.9,4.9,5.9,6.9,8.9,9.9,7.7,3.1};
 
 
-int main ()
+int main()
 {
 	char sensorDataStream[64];
 	BMS sensor_data;
