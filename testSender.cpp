@@ -9,7 +9,7 @@ SCENARIO("Validate JSON Data format")
     GIVEN("sensor data of battery temperature and charging current")
     {
 		char actualData[64];
-		char *expectedData = "{\"Temperature\": 23.7, \"ChargingCurrent\": 5.6}";
+		char *expectedData = (char*)"{\"Temperature\": 23.7, \"ChargingCurrent\": 5.6}";
 		BMS sensor_data;
 		sensor_data.temperature = 14.6;
 		sensor_data.chargingCurrent = 4.9;
