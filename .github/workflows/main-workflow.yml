@@ -15,7 +15,7 @@ jobs:
         sudo apt-get update
         sudo apt-get install -y gcovr
     - name: build sender
-      run: g++ -Wall -Wextra -fprofile-arcs sender.c dataAquisition.c -o sender 
+      run: g++ -Wall -Wextra -fprofile-arcs sender.c sensorDataAcquisition.c -o sender 
       
     - name: run sender
       #run: ./testSender
