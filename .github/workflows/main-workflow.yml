@@ -1,0 +1,47 @@
+name: Build and Run
+
+on: [push, pull_request]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: install coverage tool
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y gcovr
+    - name: build sender
+      run: g++ -Wall -Wextra -fprofile-arcs sender.c sensorDataAcquisition.c -o sender 
+      
+    - name: run sender
+      #run: ./testSender
+      run: ./sender
+    
+    - name: build test
+      run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage testSender.cpp sensorDataAcquisition.c -o testSender
+      
+    - name: run test
+      run: ./testSender
+      
+    - name: build receiver
+      run: g++ -Wall -Wextra -fprofile-arcs receiver.c processingSenderData.c -o receiver 
+      
+    - name: run receiver
+      run: ./sender | ./receiver
+    
+    - name: build test
+      run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage testReceiver.cpp processingSenderData.c -o testReceiver
+      
+    - name: run test
+      run: ./testReceiver
+
+    - name: 'Upload Artifact'
+      uses: actions/upload-artifact@v2
+      with:
+        name: coverage
+        path: ./*.html
+        retention-days: 21
